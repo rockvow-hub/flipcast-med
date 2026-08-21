@@ -1,0 +1,22 @@
+name = "flipcast-med"
+main = "src/index.ts"
+compatibility_date = "2026-08-20"
+
+[vars]
+FIREBASE_PROJECT_ID = "flipcast-99bd7"
+APP_ORIGIN = "https://flipcast-99bd7.web.app"
+MAX_UPLOAD_BYTES = "26214400"
+
+[[r2_buckets]]
+binding = "MEDIA_BUCKET"
+bucket_name = "flipcast"
+
+# Optional but strongly recommended for production rate limiting.
+# Create with: wrangler kv namespace create FLIPCAST_RATE_LIMIT
+# Then replace the id below and uncomment the binding.
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[triggers]
+crons = ["*/15 * * * *"]

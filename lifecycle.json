@@ -1,0 +1,10 @@
+{
+  "rules": [
+    {
+      "id": "safety-retention-cleanup",
+      "enabled": true,
+      "conditions": { "maxAge": 2592000 },
+      "action": { "type": "Delete" }
+    }
+  ]
+}
